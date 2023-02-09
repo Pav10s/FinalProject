@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="100dp"
+    tools:context=".SignUp">
+
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="248dp"
+      android:layout_height="67dp"
+      android:layout_gravity="center"
+      android:text="Register"
+      android:textAlignment="center"
+      android:textColor="@color/dark_blue"
+      android:textSize="@dimen/loginCardRadius" />
+
+  <EditText
+      android:id="@+id/email1"
+      android:layout_marginTop="60dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="Email"
+      android:inputType="textEmailAddress" />
+
+  <EditText
+      android:id="@+id/Password1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:ems="10"
+      android:hint="Password"
+      android:inputType="textPassword"
+      android:minHeight="48dp" />
+
+  <Button
+      android:id="@+id/register1"
+      android:layout_marginTop="60dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Sign Up"
+      android:minHeight="48dp" />
+
+  <Button
+      android:id="@+id/login"
+      android:layout_marginTop="100dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Login Page" />
+
+</LinearLayout>

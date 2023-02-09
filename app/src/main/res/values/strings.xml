@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Final Project</string>
+    <!--Template-->
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+</resources>
