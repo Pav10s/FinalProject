@@ -16,6 +16,15 @@
         android:layout_weight="1"
         android:layout_marginHorizontal="120dp"
         android:layout_marginVertical="300dp"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background"
+        />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView Super" />
 
 </LinearLayout>

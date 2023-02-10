@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -70,5 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackPressed(){
+
+        Toast.makeText(getApplicationContext(), " Tata :) ", Toast.LENGTH_SHORT).show();
+        finishAffinity();
+        System.exit(0);
+
     }
 }

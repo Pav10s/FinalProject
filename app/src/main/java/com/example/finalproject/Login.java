@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
 
         log_button.setOnClickListener(v -> loginUser());
 
-        button1.setOnClickListener(v -> Register());
+        button1.setOnClickListener(v -> startActivity(new Intent(this,SignUp.class)));
 
     }
 
@@ -61,10 +61,10 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(Login.this,"User logged in successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this,"User logged in successfully ", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Login.this,MainActivity.class));
                     }else{
-                        Toast.makeText(Login.this,"Login Unsuccessful" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this,"Login Unsuccessful " + task.getException().getMessage(),Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -72,9 +72,11 @@ public class Login extends AppCompatActivity {
     }
 
 
+    public void onBackPressed(){
 
-    public void Register() {
-        Intent intent = new Intent(this,SignUp.class);
-        startActivity(intent);
+        Toast.makeText(getApplicationContext(), " Tata :) ", Toast.LENGTH_SHORT).show();
+        finishAffinity();
+        System.exit(0);
+
     }
 }
