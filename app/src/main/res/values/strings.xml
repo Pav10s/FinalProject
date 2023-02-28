@@ -6,4 +6,18 @@
     <string name="login_password_hint">Password</string>
     <string name="signup_login_hint">Already have an account? Sign In</string>
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+
+    <string-array name="recText">
+        <item>Message</item>
+        <item>Phone</item>
+        <item>Camera</item>
+        <item>Google</item>
+        <item>Whatsapp</item>
+        <item>Tinder</item>
+        <item>Whatever</item>
+        <item>However</item>
+        <item>TTT</item>
+        <item>PES</item>
+
+    </string-array>
 </resources>
