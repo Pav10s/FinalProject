@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,10 +28,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
-    //private Button button1;
-    //private Button button2;
-    //private Button button3;
-    //private Button button4;
+
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     TextView phName;
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
             case R.id.about:
                 startActivity(new Intent(MainActivity.this, About.class));
-                Toast.makeText(this, PhName,Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.donate:
@@ -120,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemClick(int position) {
-        if (PhName == "Samsung") {
+        if (PhName.equals("Samsung")) {
             if (position == 0)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 1)
