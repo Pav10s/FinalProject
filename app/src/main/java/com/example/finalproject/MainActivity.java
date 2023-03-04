@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         }
         else {
             if (position == 0)
-                startActivity(new Intent(this, Whatsapp.class));
+                startActivity(new Intent(this, Phone.class));
             else if (position == 1)
                 startActivity(new Intent(this, GooglePay.class));
             else if (position == 2)

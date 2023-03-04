@@ -36,7 +36,7 @@ public class SignUp extends AppCompatActivity {
     EditText pass;
     Button log;
 
-    String[] phones = { "Select Phone", "Samsung", "Realme"}; //To add the list of phones
+    String[] phones = { "Select Phone", "Samsung", "Redmi"}; //To add the list of phones
     String userID;
 
     FirebaseAuth mAuth;

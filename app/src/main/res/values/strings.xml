@@ -8,8 +8,8 @@
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
 
     <string-array name="recText">
-        <item>Message</item>
         <item>Phone</item>
+        <item>Message</item>
         <item>Camera</item>
         <item>Google</item>
         <item>Whatsapp</item>

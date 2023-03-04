@@ -10,4 +10,6 @@
     <color name="dark_blue">#13005A</color>
     <color name="orange">#FF8B13</color>
 
+    <color name="app_name">#191970</color>
+
 </resources>
