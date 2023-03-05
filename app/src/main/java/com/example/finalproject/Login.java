@@ -30,6 +30,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
         l_email = findViewById(R.id.email);
         l_pass = findViewById(R.id.Password);

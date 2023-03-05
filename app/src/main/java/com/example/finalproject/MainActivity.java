@@ -2,10 +2,12 @@ package com.example.finalproject;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -31,8 +33,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
-    TextView phName;
-    String userID,PhName;
+    String userID,PhName,fullName;
 
     ArrayList<RecModel> recModels = new ArrayList<>();
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        phName = findViewById(R.id.PhName);
+
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -57,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                phName.setText(value.getString("phName"));
                 PhName = value.getString("phName");
+                fullName = value.getString("fullName");
             }
         });
 
@@ -100,8 +101,24 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 break;
 
             case R.id.log_out:
-                mAuth.signOut();
-                startActivity(new Intent(MainActivity.this, Login.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(fullName+", Are you sure you want to log out?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                mAuth.signOut();
+                                startActivity(new Intent(MainActivity.this, Login.class));
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // cancel logout action
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+
                 break;
 
         }

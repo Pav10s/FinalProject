@@ -34,6 +34,8 @@ public class SignUp extends AppCompatActivity {
 
     EditText r_email;
     EditText pass;
+    EditText re_pass;
+    EditText fullName;
     Button log;
 
     String[] phones = { "Select Phone", "Samsung", "Redmi"}; //To add the list of phones
@@ -48,9 +50,12 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        getSupportActionBar().hide();
 
+        fullName = findViewById(R.id.full_name);
         r_email = findViewById(R.id.email1);
         pass = findViewById(R.id.Password1);
+        re_pass = findViewById(R.id.Password2);
         log = findViewById(R.id.register1);
 
         Spinner spin = findViewById(R.id.Spin);
@@ -80,8 +85,10 @@ public class SignUp extends AppCompatActivity {
 
     
     private void createUser(Spinner spin){
+        String name = fullName.getText().toString();
         String email = r_email.getText().toString();
         String password = pass.getText().toString();
+        String re_password = re_pass.getText().toString();
         String selectedItem = spin.getSelectedItem().toString();
 
         if(TextUtils.isEmpty(email)){
@@ -93,7 +100,12 @@ public class SignUp extends AppCompatActivity {
             pass.requestFocus();
         }
 
-        else if(selectedItem == "Select Phone"){
+        else if (!TextUtils.equals(password, re_password)){
+            re_pass.setError("Password should be same");
+            re_pass.requestFocus();
+        }
+
+        else if(selectedItem.equals("Select Phone")){
             Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
         }
 
@@ -107,6 +119,7 @@ public class SignUp extends AppCompatActivity {
                         DocumentReference documentReference = fStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
                         user.put("phName",selectedItem);
+                        user.put("fullName",name);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
