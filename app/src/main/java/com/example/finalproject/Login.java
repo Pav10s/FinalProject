@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,13 +19,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
-    private Button button1;
+    private TextView signup_redirect;
+    private TextView forgot_password;
+    private EditText l_email;
+    private EditText l_pass;
+    private Button log_button;
 
-    EditText l_email;
-    EditText l_pass;
-    Button log_button;
-
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +34,18 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().hide();
 
         l_email = findViewById(R.id.email);
-        l_pass = findViewById(R.id.Password);
+        l_pass = findViewById(R.id.password);
 
-        button1 = findViewById(R.id.register);
-        log_button = findViewById(R.id.button2);
+        signup_redirect = findViewById(R.id.signupText);
+        forgot_password = findViewById(R.id.forgotPassword);
+        log_button = findViewById(R.id.loginButton);
 
         mAuth = FirebaseAuth.getInstance();
 
         log_button.setOnClickListener(v -> loginUser());
+        forgot_password.setOnClickListener(v ->startActivity(new Intent(this,ForgotPassword.class)));
 
-        button1.setOnClickListener(v -> startActivity(new Intent(this,SignUp.class)));
+        signup_redirect.setOnClickListener(v -> startActivity(new Intent(this,SignUp.class)));
 
     }
 

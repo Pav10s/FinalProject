@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -30,15 +31,15 @@ import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
     public static final String TAG = "TAG";
-    private Button button1;
 
-    EditText r_email;
-    EditText pass;
-    EditText re_pass;
-    EditText fullName;
-    Button log;
+    private TextView log_redirect;
+    private EditText r_email;
+    private EditText pass;
+    private EditText re_pass;
+    private EditText fullName;
+    private Button reg;
 
-    String[] phones = { "Select Phone", "Samsung", "Redmi"}; //To add the list of phones
+    String[] phones = { "Select Phone", "Google", "Redmi"}; //To add the list of phones
     String userID;
 
     FirebaseAuth mAuth;
@@ -53,10 +54,11 @@ public class SignUp extends AppCompatActivity {
         getSupportActionBar().hide();
 
         fullName = findViewById(R.id.full_name);
-        r_email = findViewById(R.id.email1);
-        pass = findViewById(R.id.Password1);
-        re_pass = findViewById(R.id.Password2);
-        log = findViewById(R.id.register1);
+        r_email = findViewById(R.id.email);
+        pass = findViewById(R.id.password1);
+        re_pass = findViewById(R.id.password2);
+        reg = findViewById(R.id.registerButton);
+        log_redirect = findViewById(R.id.login);
 
         Spinner spin = findViewById(R.id.Spin);
 
@@ -72,13 +74,12 @@ public class SignUp extends AppCompatActivity {
         // Set the ArrayAdapter (ad) data on the Spinner which binds data to spinner
         spin.setAdapter(ad);
 
-        button1 = findViewById(R.id.login);
-        button1.setOnClickListener(v -> Login());
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        log.setOnClickListener(view -> createUser(spin));
+        reg.setOnClickListener(view -> createUser(spin));
+        log_redirect.setOnClickListener(v -> Login());
 
     }
 
