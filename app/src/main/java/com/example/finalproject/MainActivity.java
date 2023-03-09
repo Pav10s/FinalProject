@@ -104,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 startActivity(new Intent(MainActivity.this, Donation.class));
                 break;
 
+            case R.id.sent_request:
+                startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
+                break;
+
             case R.id.log_out:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(fullName+", Are you sure you want to log out?")

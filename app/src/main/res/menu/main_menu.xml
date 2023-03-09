@@ -16,6 +16,11 @@
         />
 
     <item
+        android:id="@+id/sent_request"
+        android:title="Sent Requests"
+        />
+
+    <item
         android:id="@+id/log_out"
         android:title="Logout" />
 </menu>
