@@ -38,6 +38,7 @@ public class SignUp extends AppCompatActivity {
     private EditText re_pass;
     private EditText fullName;
     private Button reg;
+    private Spinner spin;
 
     String[] phones = { "Select Phone", "Google", "Redmi"}; //To add the list of phones
     String userID;
@@ -60,7 +61,7 @@ public class SignUp extends AppCompatActivity {
         reg = findViewById(R.id.registerButton);
         log_redirect = findViewById(R.id.login);
 
-        Spinner spin = findViewById(R.id.Spin);
+         spin = findViewById(R.id.Spin);
 
         // Create the instance of ArrayAdapter having the list of courses
         ArrayAdapter ad

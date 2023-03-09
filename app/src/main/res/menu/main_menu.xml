@@ -3,6 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/request"
+        android:title="Sent Request" />
+
+    <item
         android:id="@+id/about"
         android:title="About"
         />

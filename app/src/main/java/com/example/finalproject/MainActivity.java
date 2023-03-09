@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
         switch (item.getItemId()){
 
+            case R.id.request:
+                startActivity(new Intent(MainActivity.this, ChangePhone.class));
+                break;
+
             case R.id.about:
                 startActivity(new Intent(MainActivity.this, About.class));
                 break;
