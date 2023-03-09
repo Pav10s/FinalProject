@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/request"
-        android:title="Sent Request" />
+        android:title="Change Phone" />
 
     <item
         android:id="@+id/about"
