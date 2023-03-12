@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,9 +40,9 @@ public class SignUp extends AppCompatActivity {
     private EditText re_pass;
     private EditText fullName;
     private Button reg;
-    private Spinner spin;
+    private AutoCompleteTextView phoneSelection;
 
-    String[] phones = { "Select Phone", "Google", "Redmi"}; //To add the list of phones
+    String[] phones = { "Select Phone", "Google", "Redmi", "Redmi 75", "Redmi 99"}; //To add the list of phones
     String userID;
 
     FirebaseAuth mAuth;
@@ -61,37 +63,34 @@ public class SignUp extends AppCompatActivity {
         reg = findViewById(R.id.registerButton);
         log_redirect = findViewById(R.id.login);
 
-         spin = findViewById(R.id.Spin);
+        phoneSelection = findViewById(R.id.phone_selection);
 
         // Create the instance of ArrayAdapter having the list of courses
         ArrayAdapter ad
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, phones);
+                = new ArrayAdapter(this, android.R.layout.select_dialog_item, phones);
 
-        // set simple layout resource file for each item of spinner
-        ad.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
+        phoneSelection.setThreshold(2);
+        phoneSelection.setAdapter(ad);
 
-        // Set the ArrayAdapter (ad) data on the Spinner which binds data to spinner
-        spin.setAdapter(ad);
+
 
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        reg.setOnClickListener(view -> createUser(spin));
+        reg.setOnClickListener(view -> createUser(phoneSelection));
         log_redirect.setOnClickListener(v -> Login());
 
     }
 
 
     
-    private void createUser(Spinner spin){
+    private void createUser(AutoCompleteTextView phoneSelection){
         String name = fullName.getText().toString();
         String email = r_email.getText().toString();
         String password = pass.getText().toString();
         String re_password = re_pass.getText().toString();
-        String selectedItem = spin.getSelectedItem().toString();
+        String selectedItem = phoneSelection.getText().toString();
 
         if(TextUtils.isEmpty(email)){
             r_email.setError("Email cannot be empty");
@@ -107,16 +106,22 @@ public class SignUp extends AppCompatActivity {
             re_pass.requestFocus();
         }
 
-        else if(selectedItem.equals("Select Phone")){
-            Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
+        else if(TextUtils.isEmpty(selectedItem)){
+            phoneSelection.setError("Phone must be selected");
         }
+
+
+        else if(!check(phones, selectedItem)){
+                phoneSelection.setError("Phone not available");
+        }
+
+
 
         else{
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(SignUp.this,selectedItem,Toast.LENGTH_LONG).show();
                         userID = mAuth.getCurrentUser().getUid();
                         DocumentReference documentReference = fStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
@@ -126,6 +131,7 @@ public class SignUp extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 Log.d(TAG,"Created"+userID);
+                                mAuth.signOut();
                             }
                         });
                         startActivity(new Intent(SignUp.this,Login.class));
@@ -142,6 +148,18 @@ public class SignUp extends AppCompatActivity {
     public void Login() {
         Intent intent = new Intent(this,Login.class);
         startActivity(intent);
+    }
+
+    private static boolean check(String[] arr, String toCheckValue)
+    {
+        // sort given array
+        Arrays.sort(arr);
+        // check if the specified element
+        // is present in the array or not
+        // using Binary Search method
+        int res = Arrays.binarySearch(arr, toCheckValue);
+        boolean test = res >= 0 ? true : false;
+        return test;
     }
 
 }

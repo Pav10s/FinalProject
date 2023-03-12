@@ -62,6 +62,19 @@
           android:textColorHighlight="@color/cardview_dark_background"
           android:layout_marginTop="20dp"/>
 
+      <AutoCompleteTextView
+          android:id="@+id/phone_selection"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginTop="20dp"
+          android:background="@drawable/custom_edittext"
+          android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+          android:drawablePadding="8dp"
+          android:hint="Select Phone Model"
+          android:padding="8dp"
+          android:textColor="@color/black"
+          android:textColorHighlight="@color/cardview_dark_background" />
+
       <EditText
           android:layout_width="match_parent"
           android:layout_height="50dp"
@@ -90,14 +103,6 @@
           android:textColorHighlight="@color/cardview_dark_background"
           android:layout_marginTop="20dp" />
 
-
-      <Spinner
-          android:layout_width="match_parent"
-          android:layout_height="50dp"
-          android:padding="8dp"
-          android:layout_marginTop="20dp"
-          android:id="@+id/Spin"
-          android:background="@drawable/custom_edittext"/>
 
       <Button
           android:layout_width="match_parent"

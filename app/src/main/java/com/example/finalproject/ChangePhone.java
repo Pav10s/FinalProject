@@ -4,8 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.AutoText;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,12 +21,13 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ChangePhone extends AppCompatActivity {
 
-    private Spinner changeSpinner;
+    private AutoCompleteTextView changeAuto;
     private Button changeButton;
 
     private String fullName;
@@ -42,20 +45,14 @@ public class ChangePhone extends AppCompatActivity {
         setContentView(R.layout.activity_change_phone);
         getSupportActionBar().hide();
 
-        changeSpinner = findViewById(R.id.ChangeSpinner);
+        changeAuto = findViewById(R.id.ChangeAuto);
         changeButton = findViewById(R.id.ChangeButton);
 
-        // Create the instance of ArrayAdapter having the list of courses
         ArrayAdapter ad
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, phones);
+                = new ArrayAdapter(this, android.R.layout.select_dialog_item, phones);
 
-        // set simple layout resource file for each item of spinner
-        ad.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-
-        // Set the ArrayAdapter (ad) data on the Spinner which binds data to spinner
-        changeSpinner.setAdapter(ad);
+        changeAuto.setThreshold(2);
+        changeAuto.setAdapter(ad);
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -76,10 +73,15 @@ public class ChangePhone extends AppCompatActivity {
 
 
     private void ChangeData(DocumentReference documentReference, String fullName) {
-        String selectedItem = changeSpinner.getSelectedItem().toString();
+        String selectedItem = changeAuto.getText().toString();
 
-        if(selectedItem.equals("Select Phone")) {
-            Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(selectedItem)){
+            changeAuto.setError("Phone must be selected");
+            //Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
+        }
+
+        else if(!check(phones, selectedItem)){
+            changeAuto.setError("Phone not available");
         }
 
         else {
@@ -95,6 +97,14 @@ public class ChangePhone extends AppCompatActivity {
             }
 
     }//SendRequest() ends here
+
+    private static boolean check(String[] arr, String toCheckValue)
+    {
+        // sort given array
+        Arrays.sort(arr);
+        // return the boolean value whether the string is same or not
+        return Arrays.binarySearch(arr, toCheckValue) >= 0;
+    }
 
 
 

@@ -26,8 +26,7 @@ public class FeedbackActivity extends AppCompatActivity {
     private Button requestButton;
     private EditText requestContent;
 
-    public String fullName;
-    private int i = 0;
+    public String userID, fullName;
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
@@ -37,31 +36,46 @@ public class FeedbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
-
         requestContent = findViewById(R.id.RequestContent);
         requestButton = findViewById(R.id.RequestButton);
+
         fStore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        requestButton.setOnClickListener(v -> {
-
-            String suggestion = requestContent.getText().toString();
-
-            if (suggestion.isEmpty()) {
-                requestContent.setError("This field cannot be empty");
-            } else {
-                Map<String, Object> suggestionData = new HashMap<>();
-                suggestionData.put("suggestion", suggestion);
-
-                fStore.collection("suggestions")
-                        .add(suggestionData)
-                        .addOnSuccessListener(documentReference -> {
-                            Toast.makeText(FeedbackActivity.this, "Thank you for your suggestion", Toast.LENGTH_SHORT).show();
-                            finish();
-                        })
-                        .addOnFailureListener(e -> {
-                            Toast.makeText(FeedbackActivity.this, "Failed to submit suggestion", Toast.LENGTH_SHORT).show();
-                        });
+        userID = mAuth.getCurrentUser().getUid();
+        DocumentReference documentRef = fStore.collection("users").document(userID);
+        documentRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                fullName = value.getString("fullName");
             }
         });
+
+        requestButton.setOnClickListener(v -> submitRequest());
+    }
+
+    //Method to submit the request
+    private void submitRequest() {
+
+        String suggestion = requestContent.getText().toString();
+
+        if (suggestion.isEmpty()) {
+            requestContent.setError("This field cannot be empty");
+
+        } else {
+            Map<String, Object> suggestionData = new HashMap<>();
+            suggestionData.put("fullName", fullName);
+            suggestionData.put("suggestion", suggestion);
+
+            fStore.collection("suggestions")
+                    .add(suggestionData)
+                    .addOnSuccessListener(documentReference -> {
+                        Toast.makeText(FeedbackActivity.this, "Thank you for your suggestion", Toast.LENGTH_SHORT).show();
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(FeedbackActivity.this, "Failed to submit suggestion", Toast.LENGTH_SHORT).show();
+                    });
+        }
     }
 }
