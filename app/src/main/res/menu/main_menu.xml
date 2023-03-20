@@ -4,23 +4,21 @@
 
     <item
         android:id="@+id/request"
-        android:title="Change Phone" />
+        android:title="Change Phone"/>
 
     <item
-        android:id="@+id/about"
-        android:title="About"
-        />
-    <item
         android:id="@+id/donate"
-        android:title="Donations"
-        />
+        android:title="Donations"/>
 
     <item
         android:id="@+id/sent_request"
-        android:title="Sent Requests"
-        />
+        android:title="Feedback"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="About"/>
 
     <item
         android:id="@+id/log_out"
-        android:title="Logout" />
+        android:title="Logout"/>
 </menu>
