@@ -6,12 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Donation">
 
-    <TextView
-        android:id="@+id/textView"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountlayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <EditText
+            android:id="@+id/idEdtAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter amount to be payed"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--button to make payment-->
+    <Button
+        android:id="@+id/idBtnPay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Donation"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/amountlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#0A930F"
+        android:text="Pay using RazorPay"
+        android:textAllCaps="false" />
 
 </RelativeLayout>
