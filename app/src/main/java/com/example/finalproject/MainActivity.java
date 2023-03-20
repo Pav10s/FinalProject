@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     ArrayList<RecModel> recModels = new ArrayList<>();
 
     //Stores the images of the Recycler view
-    int[] recImages = {R.drawable.mock,R.drawable.mock1,
-            R.drawable.mock,R.drawable.mock1,
-            R.drawable.mock,R.drawable.mock1,
+    int[] recImages = {R.drawable.phone,R.drawable.camera,
+            R.drawable.whatsapp,R.drawable.playstore,
+            R.drawable.youtube,R.drawable.gmail,
             R.drawable.mock,R.drawable.mock1,
             R.drawable.mock,R.drawable.mock1};
 
@@ -155,23 +155,23 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
             if (position == 0)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 1)
-                startActivity(new Intent(this, Message.class));
+                startActivity(new Intent(this, Camera.class));
             else if (position == 2)
-                startActivity(new Intent(this, Phone.class));
+                startActivity(new Intent(this, Whatsapp.class));
             else if (position == 3)
-                startActivity(new Intent(this, Message.class));
+                startActivity(new Intent(this, PlayStore.class));
             else if (position == 4)
-                startActivity(new Intent(this, Phone.class));
+                startActivity(new Intent(this, Youtube.class));
             else if (position == 5)
-                startActivity(new Intent(this, Message.class));
+                startActivity(new Intent(this, Gmail.class));
             else if (position == 6)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 7)
-                startActivity(new Intent(this, Message.class));
+                startActivity(new Intent(this, Phone.class));
             else if (position == 8)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 9)
-                startActivity(new Intent(this, Message.class));
+                startActivity(new Intent(this, Phone.class));
 
     }
 
