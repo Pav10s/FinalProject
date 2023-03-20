@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     //To allocate different activity for different recycler view
     @Override
     public void onItemClick(int position) {
-        if (PhName.equals("Samsung")) {
+
             if (position == 0)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 1)
@@ -172,28 +172,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 startActivity(new Intent(this, Phone.class));
             else if (position == 9)
                 startActivity(new Intent(this, Message.class));
-        }
-        else {
-            if (position == 0)
-                startActivity(new Intent(this, Phone.class));
-            else if (position == 1)
-                startActivity(new Intent(this, GooglePay.class));
-            else if (position == 2)
-                startActivity(new Intent(this, Whatsapp.class));
-            else if (position == 3)
-                startActivity(new Intent(this, GooglePay.class));
-            else if (position == 4)
-                startActivity(new Intent(this, Whatsapp.class));
-            else if (position == 5)
-                startActivity(new Intent(this, GooglePay.class));
-            else if (position == 6)
-                startActivity(new Intent(this, Whatsapp.class));
-            else if (position == 7)
-                startActivity(new Intent(this, GooglePay.class));
-            else if (position == 8)
-                startActivity(new Intent(this, Whatsapp.class));
-            else if (position == 9)
-                startActivity(new Intent(this, GooglePay.class));
-        }
+
     }
+
 }
