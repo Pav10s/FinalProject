@@ -17,10 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.common.util.ArrayUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.common.collect.ObjectArrays;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -42,7 +44,22 @@ public class SignUp extends AppCompatActivity {
     private Button reg;
     private AutoCompleteTextView phoneSelection;
 
-    String[] phones = { "Select Phone", "Google", "Redmi", "Redmi 75", "Redmi 99"}; //To add the list of phones
+    /*
+    String[] phones = { "Select Phone", "Google", "Redmi 7A", "Redmi 7", "Redmi 8",
+
+            "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
+            "Redmi Note 7 Pro", "Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9",
+            "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2","Poco C3"}; //To add the list of phones
+     */
+
+    String[] redmi = {"Redmi 7A", "Redmi 7", "Redmi 8",
+            "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
+            "Redmi Note 7 Pro", "Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9",
+            "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2",
+            "Poco C3"};
+
+    String[] google = {"Google"};
+    String[] phones = ObjectArrays.concat(redmi, google, String.class);
     String userID;
 
     FirebaseAuth mAuth;
@@ -83,6 +100,17 @@ public class SignUp extends AppCompatActivity {
 
     }
 
+    private String selectBrand() {
+        String selectedItem = phoneSelection.getText().toString();
+        String brand;
+        Arrays.sort(redmi);
+        if(check(redmi,selectedItem))
+            brand="Redmi";
+        else
+            brand="Google";
+        return brand;
+    }
+
 
     
     private void createUser(AutoCompleteTextView phoneSelection){
@@ -90,7 +118,7 @@ public class SignUp extends AppCompatActivity {
         String email = r_email.getText().toString();
         String password = pass.getText().toString();
         String re_password = re_pass.getText().toString();
-        String selectedItem = phoneSelection.getText().toString();
+        String verify_phone = phoneSelection.getText().toString();
 
         if(TextUtils.isEmpty(email)){
             r_email.setError("Email cannot be empty");
@@ -106,12 +134,12 @@ public class SignUp extends AppCompatActivity {
             re_pass.requestFocus();
         }
 
-        else if(TextUtils.isEmpty(selectedItem)){
+        else if(TextUtils.isEmpty(verify_phone)){
             phoneSelection.setError("Phone must be selected");
         }
 
 
-        else if(!check(phones, selectedItem)){
+        else if(!check(phones, verify_phone)){
                 phoneSelection.setError("Phone not available");
         }
 
@@ -125,7 +153,7 @@ public class SignUp extends AppCompatActivity {
                         userID = mAuth.getCurrentUser().getUid();
                         DocumentReference documentReference = fStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
-                        user.put("phName",selectedItem);
+                        user.put("phName",selectBrand());
                         user.put("fullName",name);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -154,12 +182,8 @@ public class SignUp extends AppCompatActivity {
     {
         // sort given array
         Arrays.sort(arr);
-        // check if the specified element
-        // is present in the array or not
-        // using Binary Search method
-        int res = Arrays.binarySearch(arr, toCheckValue);
-        boolean test = res >= 0 ? true : false;
-        return test;
+        // return the boolean value whether the string is same or not
+        return Arrays.binarySearch(arr, toCheckValue) >= 0;
     }
 
 }

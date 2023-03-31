@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,13 +23,16 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
-public class Display extends AppCompatActivity {
+import java.util.Locale;
+
+public class Display extends AppCompatActivity implements TextToSpeech.OnInitListener {
     int i = 0;
     String[] urls,desc;
     private Button next;
     private Button previous;
     private ProgressBar progressBar;
     TextView description;
+    private TextToSpeech tts;
 
 
     @Override
@@ -34,6 +40,16 @@ public class Display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
         getSupportActionBar().hide();
+
+        tts = new TextToSpeech(this, this);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                speakOut(desc[0]);  //speak after 1000ms
+            }
+        }, 1000);
+
 
         progressBar = findViewById(R.id.progress_bar);
 
@@ -48,6 +64,7 @@ public class Display extends AppCompatActivity {
         imageRetrieve();
         textRetrieve(i);
         previous.setVisibility(View.INVISIBLE); //Initially set previous button disabled
+
         next.setOnClickListener(v -> {
 
             i++;
@@ -59,6 +76,7 @@ public class Display extends AppCompatActivity {
                 previous.setVisibility(View.VISIBLE);
                 imageRetrieve();
                 textRetrieve(i);
+                speakOut(desc[i]);
             }
 
         });
@@ -69,6 +87,7 @@ public class Display extends AppCompatActivity {
                 next.setVisibility(View.VISIBLE);
                 imageRetrieve();
                 textRetrieve(i);
+                speakOut(desc[i]);
             }
 
             if (i == 0) {
@@ -77,6 +96,25 @@ public class Display extends AppCompatActivity {
         });
 
 
+        /*
+        description.setOnClickListener(v -> {
+        speakOut(desc[i]);
+        }) ;
+         */
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                // Speak the text when the screen is touched
+                speakOut(desc[i]);
+                return true;
+            default:
+                return super.onTouchEvent(event);
+        }
     }
 
     public void imageRetrieve() {
@@ -100,7 +138,30 @@ public class Display extends AppCompatActivity {
 
      public void textRetrieve(int i) {
         description.setText(desc[i]);
+    }
 
+    private void speakOut(String text) {
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null,"TextToSpeech");
+    }
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            tts.setSpeechRate(0.75f);
+            tts.setLanguage(new Locale("en", "IND"));
+            // TTS initialization succeeded
+        } else {
+            // TTS initialization failed
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
     }
 
 }

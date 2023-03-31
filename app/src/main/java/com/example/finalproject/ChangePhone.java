@@ -3,6 +3,7 @@ package com.example.finalproject;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.AutoText;
 import android.text.TextUtils;
@@ -14,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.collect.ObjectArrays;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,7 +34,15 @@ public class ChangePhone extends AppCompatActivity {
 
     private String fullName;
 
-    String[] phones = { "Select Phone", "Google", "Redmi"}; //To add the list of phones
+    String[] redmi = {"Redmi 7A", "Redmi 7", "Redmi 8",
+            "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
+            "Redmi Note 7 Pro", "Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9",
+            "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2",
+            "Poco C3"};
+
+    String[] google = {"Google"};
+
+    String[] phones = ObjectArrays.concat(redmi, google, String.class);
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
@@ -73,30 +83,41 @@ public class ChangePhone extends AppCompatActivity {
 
 
     private void ChangeData(DocumentReference documentReference, String fullName) {
-        String selectedItem = changeAuto.getText().toString();
+        String verifyItem = changeAuto.getText().toString();
 
-        if(TextUtils.isEmpty(selectedItem)){
+        if(TextUtils.isEmpty(verifyItem)){
             changeAuto.setError("Phone must be selected");
             //Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
         }
 
-        else if(!check(phones, selectedItem)){
+        else if(!check(phones, verifyItem)){
             changeAuto.setError("Phone not available");
         }
 
         else {
             Map<String, Object> change = new HashMap<>();
-            change.put("phName",selectedItem);
+            change.put("phName",selectBrand());
             change.put("fullName",fullName);
             documentReference.set(change).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
                     Toast.makeText(ChangePhone.this, "Phone Changed", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ChangePhone.this,MainActivity.class));
                 }
             });
             }
 
-    }//SendRequest() ends here
+    }//ChangeData() ends here
+
+    private String selectBrand() {
+        String selectedItem = changeAuto.getText().toString();
+        String brand;
+        if(check(redmi,selectedItem))
+            brand="Redmi";
+        else
+            brand="Google";
+        return brand;
+    }
 
     private static boolean check(String[] arr, String toCheckValue)
     {
