@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
             else if (position == 5)
                 startActivity(new Intent(this, Gmail.class));
             else if (position == 6)
-                startActivity(new Intent(this, Phone.class));
+                startActivity(new Intent(this, Chrome.class));
             else if (position == 7)
                 startActivity(new Intent(this, Phone.class));
             else if (position == 8)

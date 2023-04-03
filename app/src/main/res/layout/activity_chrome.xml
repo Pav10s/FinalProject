@@ -19,31 +19,17 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/video_search"
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_edittext"
-            android:text="SEARCH FOR ANY VIDEO"
+            android:text="SEARCH FOR ANYTHING"
             android:textStyle="bold"
             android:textAlignment="center"
             android:padding="20dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/purple" />
-
-        <TextView
-            android:id="@+id/video_download"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/custom_edittext"
-            android:text="DOWNLOAD ANY VIDEO"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:padding="20dp"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/purple" />
-
 
 
     </LinearLayout>
