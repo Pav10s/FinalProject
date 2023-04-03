@@ -19,12 +19,12 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/send_mail"
+            android:id="@+id/record_voice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_edittext"
-            android:text="SEND AN EMAIL"
+            android:text="RECORD YOUR VOICE"
             android:textStyle="bold"
             android:textAlignment="center"
             android:padding="20dp"
@@ -32,12 +32,12 @@
             android:textColorHighlight="@color/purple" />
 
         <TextView
-            android:id="@+id/attach"
+            android:id="@+id/delete_record"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_edittext"
-            android:text="ATTACH A DOCUMENT TO AN EMAIL"
+            android:text="DELETE THE RECORDING"
             android:textStyle="bold"
             android:textAlignment="center"
             android:padding="20dp"

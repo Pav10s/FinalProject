@@ -99,7 +99,7 @@ public class Youtube extends AppCompatActivity {
                 intent.putExtra("Strings", google_video_search_strings);
             } else {
                 intent.putExtra("URLS", redmi_video_search);
-                intent.putExtra("Strings", google_video_search_strings);
+                intent.putExtra("Strings", redmi_video_search_strings);
             }
             startActivity(intent);
 

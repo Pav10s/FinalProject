@@ -9,14 +9,14 @@
 
     <string-array name="recText">
         <item>Phone</item>
+        <item>Message</item>
         <item>Camera</item>
         <item>Whatsapp</item>
-        <item>Playstore</item>
-        <item>YouTube</item>
-        <item>Gmail</item>
         <item>Chrome</item>
-        <item>TTT</item>
-        <item>PES</item>
+        <item>YouTube</item>
+        <item>Voice Recorder</item>
+        <item>Play Store</item>
+        <item>Gmail</item>
 
     </string-array>
 </resources>
