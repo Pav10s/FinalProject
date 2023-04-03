@@ -27,10 +27,11 @@ public class VoiceRecorder extends AppCompatActivity {
 
     private String[] redmi_record_voice_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
 
-    private String[] google_record_voice = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-4c9c1967e0.gif?alt=media&token=06a2f0e2-358a-407d-bc35-fa15aea2b269",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-55f2793062.gif?alt=media&token=d34b71ab-6a5f-42d0-a03b-0b87ca53ae9e",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-b60d5fb5fb.gif?alt=media&token=5937d7e6-77a9-4459-bfd5-a2d0fead33e0",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-de91f3833c.gif?alt=media&token=9b06c335-105d-464d-b438-d62510a3c3db"};
+    private String[] google_record_voice = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2F1.gif?alt=media&token=04dbc47d-8c8e-46a8-87d9-e053553e10e2",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2F2.gif?alt=media&token=512943c4-8bb1-49b4-bf68-161b8491e88d",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2F3.gif?alt=media&token=40dc688b-b8a4-4254-84fb-844d60bd4227",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2F4.gif?alt=media&token=89e29e36-457a-41e8-9cf7-d03f82f4f5a6",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FDelete%20Record%2F8.gif?alt=media&token=d6eae43b-a0c0-494e-a030-20183522078e"};
 
     private String[] google_record_voice_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
 
@@ -41,10 +42,10 @@ public class VoiceRecorder extends AppCompatActivity {
 
     private String[] redmi_delete_record_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
 
-    private String[] google_delete_record =  {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-4c9c1967e0.gif?alt=media&token=06a2f0e2-358a-407d-bc35-fa15aea2b269",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-55f2793062.gif?alt=media&token=d34b71ab-6a5f-42d0-a03b-0b87ca53ae9e",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-b60d5fb5fb.gif?alt=media&token=5937d7e6-77a9-4459-bfd5-a2d0fead33e0",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FVoiceRecorder%2Fezgif-3-de91f3833c.gif?alt=media&token=9b06c335-105d-464d-b438-d62510a3c3db"};
+    private String[] google_delete_record =  {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FDelete%20Record%2F5.gif?alt=media&token=90067a60-3d78-4453-84c0-79bb527f1173",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FDelete%20Record%2F6.gif?alt=media&token=2c465d5b-73b1-463e-ac16-d0f78d033cf1",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FDelete%20Record%2F7.gif?alt=media&token=59c34fc7-3838-4026-a814-82d715833eef",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FRecord%2FDelete%20Record%2F8.gif?alt=media&token=d6eae43b-a0c0-494e-a030-20183522078e"};
 
     private String[] google_delete_record_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
 

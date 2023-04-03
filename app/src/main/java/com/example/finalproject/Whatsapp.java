@@ -32,7 +32,7 @@ public class Whatsapp extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappMsg%2Fwhatsapp4.gif?alt=media&token=ba69ecef-5fbd-4eb5-ba80-cd7f2f33a04e",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappMsg%2Fwhatsapp5.gif?alt=media&token=1bbcb273-ecee-4ce3-b73c-54e429f95086"};
 
-    private String[] redmi_whatsapp_message_strings = {"Blah","Blah","Blah","Blah","Blah","Blah"};
+    private String[] redmi_whatsapp_message_strings = {"Click whatsapp icon","Click bottom right green button","Search contact using searchbar on top and tap on it","Type message and hit enter","Press back button to exit"};
 
     private String[] google_whatsapp_call = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappCall%2F1.gif?alt=media&token=5f9fb261-9d31-4423-9b96-e529d5e61740",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappCall%2F2.gif?alt=media&token=e2dcc4db-8908-4ea5-a317-35fcec209a34",
@@ -48,7 +48,7 @@ public class Whatsapp extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappCall%2F4.gif?alt=media&token=ff1c2650-7a6d-4032-be09-3eeb2acabaa9",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappCall%2F5.gif?alt=media&token=e8fa6fb4-fab8-4deb-9a82-664fd50991b1"};
 
-    private String[] redmi_whatsapp_call_strings = {"Blah","Blah","Blah","Blah","Blah","Blah"};
+    private String[] redmi_whatsapp_call_strings = {"Click whatsapp icon","Search contact using searchbar on top and tap on it","Click phone icon at the top","Red button to end call","Press back button to exit"};
 
     private String[] google_video_call = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F1.gif?alt=media&token=d03173ff-99d5-4d7c-b124-dd65f35d43ad",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F2.gif?alt=media&token=7ef2b888-6949-45cb-ae0e-ddf3815a4a7e",
@@ -62,7 +62,7 @@ public class Whatsapp extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F3.gif?alt=media&token=a4eb8067-a752-45a9-bb48-8c9c4aa1a816",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F4.gif?alt=media&token=4ee0d183-872f-42db-a60c-9eb3d7ed2a49"};
 
-    private String[] redmi_video_call_strings = {"Blah","Blah","Blah","Blah","Blah","Blah"};
+    private String[] redmi_video_call_strings = {"Click whatsapp icon","Search contact using searchbar on top and tap on it","Click camera icon at the top and Red button to end call","Press back button to exit"};
 
 
     FirebaseAuth mAuth;
@@ -118,7 +118,7 @@ public class Whatsapp extends AppCompatActivity {
             }
             else{
                 intent.putExtra("URLS", redmi_whatsapp_call);
-                intent.putExtra("Strings",google_whatsapp_call_strings);
+                intent.putExtra("Strings",redmi_whatsapp_call_strings);
             }
             startActivity(intent);
 

@@ -38,7 +38,7 @@ public class Phone extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2FMake%20A%20Call%2Fcall3.gif?alt=media&token=f578f17f-635c-4f35-b525-00c6f148965b",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2FMake%20A%20Call%2Fcall4.gif?alt=media&token=800e2f96-ca2e-403f-91d3-0120478d8390"};
 
-    private String[] redmi_call_urls_strings = {"Click Phone","Click Recents","Slide the contact","Red Button: End Call"};
+    private String[] redmi_call_urls_strings = {"Click Phone icon","Enter the number","Green button to call","Red button to end call"};
 
     private String[] google_add_contact = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPhone%2FMake%20a%20call%2F1.gif?alt=media&token=720a315c-2616-40f8-a592-54708691a701",
                 "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPhone%2FAdd%20Contact%2F2.gif?alt=media&token=3416dc8f-4e45-44b3-8896-ee1be25c2093",
@@ -51,7 +51,7 @@ public class Phone extends AppCompatActivity {
                 "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2FAdd%20contact%2F3.gif?alt=media&token=a61dd125-948e-44bf-9e80-912bcfc0d6c7",
                 "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2FAdd%20contact%2F4.gif?alt=media&token=75829282-7655-492a-ac83-b10ea107a7be"};
 
-    private String[] redmi_add_contact_strings = {"Click Phone","Click Recents","Slide the contact","Red Button: End Call"};
+    private String[] redmi_add_contact_strings = {"Click Phone icon","Type the Number","Click add the contact, Type name and hit tick sign at the top","Press back button"};
 
     private String[] google_call_contact = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPhone%2FMake%20a%20call%2F1.gif?alt=media&token=720a315c-2616-40f8-a592-54708691a701",
                                     "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPhone%2FCall%20from%20contact%2F5.gif?alt=media&token=a505ba0f-7858-4fb6-874e-f90f0a135ee1",
@@ -65,7 +65,7 @@ public class Phone extends AppCompatActivity {
                                     "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2Fcall%20via%20contact%2F3.gif?alt=media&token=43e9b2fa-1cdd-4981-bb12-af416988280d",
                                     "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2Fcall%20via%20contact%2F4.gif?alt=media&token=1ad7c459-2fcd-43e2-83c6-06d434bb8302"};
 
-    private String[] redmi_call_contact_strings = {"Click Phone","Click Recents","Slide the contact","Red Button: End Call"};
+    private String[] redmi_call_contact_strings = {"Click phone icon","Searchbar to search contact, Click contact","Green button to call:Red button to end call","Press back button"};
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
@@ -92,9 +92,6 @@ public class Phone extends AppCompatActivity {
         call_by_number = findViewById(R.id.callnumber);
         call_by_contact = findViewById(R.id.callcontact);
         add_contact = findViewById(R.id.addcontact);
-
-
-        String[] strings = {"Click Phone","Click Recents","Slide the contact","Red Button: End Call"};
 
 
         call_by_number.setOnClickListener(v -> {
