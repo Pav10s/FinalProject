@@ -34,15 +34,19 @@ public class ChangePhone extends AppCompatActivity {
 
     private String fullName;
 
-    String[] redmi = {"Redmi 7A", "Redmi 7", "Redmi 8",
+    private String[] redmi = {"Redmi 7A", "Redmi 7", "Redmi 8",
             "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
             "Redmi Note 7 Pro", "Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9",
             "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2",
             "Poco C3"};
 
-    String[] google = {"Google"};
+    private String[] google = {"Google Pixel 7 Pro","Google Pixel 7","Google Pixel 6 Pro","Google Pixel 6",
+            "Google Pixel 6a","Google Pixel 5","Google Pixel 5a","Google Pixel 4","Google Pixel 4XL",
+            "Google Pixel 4a","Google Pixel 3","Google Pixel 3XL","Google Pixel 3a","Google Pixel 2XL",
+            "Google Pixel 2","Google Pixel XL","MOTOROLA Edge 20 Fusion","Moto G60","Moto G51 5G",
+            "Motorola One Fusion+","Micromax IN Note 1B","Micromax IN Note 1B","Micromax IN Note 2"};
 
-    String[] phones = ObjectArrays.concat(redmi, google, String.class);
+    private String[] phones = ObjectArrays.concat(redmi, google, String.class);
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
@@ -87,7 +91,6 @@ public class ChangePhone extends AppCompatActivity {
 
         if(TextUtils.isEmpty(verifyItem)){
             changeAuto.setError("Phone must be selected");
-            //Toast.makeText(this,"Phone must be selected",Toast.LENGTH_LONG).show();
         }
 
         else if(!check(phones, verifyItem)){
