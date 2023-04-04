@@ -10,6 +10,35 @@ android:gravity="center"
 android:background="@drawable/loginpage"
 tools:context=".Login">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_description"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -25,16 +54,6 @@ tools:context=".Login">
         android:layout_gravity="center_horizontal"
         android:padding="24dp">
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Donation"
-            android:id="@+id/loginText"
-            android:textSize="36sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/purple"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amountlayout1"

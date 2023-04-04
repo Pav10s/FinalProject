@@ -41,16 +41,9 @@ public class SignUp extends AppCompatActivity {
     private EditText pass;
     private EditText re_pass;
     private EditText fullName;
-    private Button reg;
+    private Button register;
     private AutoCompleteTextView phoneSelection;
 
-    /*
-    String[] phones = { "Select Phone", "Google", "Redmi 7A", "Redmi 7", "Redmi 8",
-
-            "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
-            "Redmi Note 7 Pro", "Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9",
-            "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2","Poco C3"}; //To add the list of phones
-     */
 
     String[] redmi = {"Redmi 7A", "Redmi 7", "Redmi 8",
             "Redmi 8A", "Redmi 8A Dual", "Redmi Note 8", "Redmi Note 8 Pro", "Redmi Note 7",
@@ -58,7 +51,12 @@ public class SignUp extends AppCompatActivity {
             "Redmi 9 Active", "Redmi K20", "Redmi K20 pro", "Poco F1", "Poco X2",
             "Poco C3"};
 
-    String[] google = {"Google"};
+    String[] google = {"Google Pixel 7 Pro","Google Pixel 7","Google Pixel 6 Pro","Google Pixel 6",
+            "Google Pixel 6a","Google Pixel 5","Google Pixel 5a","Google Pixel 4","Google Pixel 4XL",
+            "Google Pixel 4a","Google Pixel 3","Google Pixel 3XL","Google Pixel 3a","Google Pixel 2XL",
+            "Google Pixel 2","Google Pixel XL","MOTOROLA Edge 20 Fusion","Moto G60","Moto G51 5G",
+            "Motorola One Fusion+","Micromax IN Note 1B","Micromax IN Note 1B","Micromax IN Note 2"};
+
     String[] phones = ObjectArrays.concat(redmi, google, String.class);
     String userID;
 
@@ -77,7 +75,7 @@ public class SignUp extends AppCompatActivity {
         r_email = findViewById(R.id.email);
         pass = findViewById(R.id.password1);
         re_pass = findViewById(R.id.password2);
-        reg = findViewById(R.id.registerButton);
+        register = findViewById(R.id.registerButton);
         log_redirect = findViewById(R.id.login);
 
         phoneSelection = findViewById(R.id.phone_selection);
@@ -95,7 +93,7 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        reg.setOnClickListener(view -> createUser(phoneSelection));
+        register.setOnClickListener(view -> createUser(phoneSelection));
         log_redirect.setOnClickListener(v -> Login());
 
     }

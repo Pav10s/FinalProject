@@ -1,11 +1,29 @@
 <resources>
-    <string name="app_name">Final Project</string>
+    <string name="app_name">Grand Phone</string>
     <!--Template-->
     <string name="register">REGISTER</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="signup_login_hint">Already have an account? Sign In</string>
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+
+    <string name="about_description">
+        This app is the final year project completed by Pavithra, Anudev, Adarsh, and Vaibhav and is an innovative and comprehensive study that explores the development of an app to help people understand and use their mobile phones more effectively.\n\n
+
+        The project involved research into the challenges faced by users when using mobile phones, particularly those who may be less tech-savvy or new to using smartphones. The app we developed is designed to be user-friendly and accessible, with easy-to-follow instructions and tutorials. It provides comprehensive explanations of features like calling, messaging, and app usage.\n\n
+
+        Throughout the project, the team demonstrated exceptional technical skills, as well as a strong ability to work collaboratively, communicate effectively, and solve problems creatively. We also conducted extensive user testing and incorporated user feedback to continuously improve the app\'s functionality and usability.\n\n
+
+        Overall, the app we developed has the potential to help millions of mobile phone users improve their skills and confidence, ultimately leading to a more positive user experience.
+    </string>
+
+    <string name="donation_description">
+        We would like to invite you to make a donation to support our old age charity through our application. We appreciate any support you can provide and thank you in advance for your generosity. Donating is easy and can be done directly through our application, with a few simple taps on your phone.
+    </string>
+
+
+
+
 
     <string-array name="recText">
         <item>Phone</item>
