@@ -24,14 +24,20 @@ public class Camera extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FCamera%2Fphoto%2Fs3.gif?alt=media&token=7249e069-83a7-4e3f-97ca-6dc5c15342da",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FCamera%2Fphoto%2Fs4.gif?alt=media&token=aa8d6fe1-db36-45a5-9107-85b77437c249"};
 
-    private String[] redmi_photo_strings = {"Click camera icon","Click the white button","Left bottom button to preview","Press back button to exit"};
+    private String[] redmi_photo_strings = {"Click camera icon",
+            "Click the white button",
+            "Left bottom button to preview",
+            "Press back button to exit"};
 
     private String[] google_photo = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FPhoto%2F1.gif?alt=media&token=7ae760a6-8519-441f-bc5b-f30ef8f5ad2b",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FPhoto%2F2.gif?alt=media&token=514606d8-e33e-4459-b8a9-a441bdef0d23",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FPhoto%2F3.gif?alt=media&token=d1be6f66-0c4f-4eca-9bc1-ae38803b59ed",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FPhoto%2F4.gif?alt=media&token=b12d7dba-5f14-4769-95e7-63483e7d24b0"};
 
-    private String[] google_photo_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] google_photo_strings = {"open the camera app",
+            "tap on the subject to focus",
+            "click the white circle located at the bottom side",
+            "the photo can be found in the gallery app"};
 
     private String[] redmi_video = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FCamera%2Fvideo%2F1.gif?alt=media&token=e493aa19-d0ea-4a82-a1f2-03f70105a436",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FCamera%2Fvideo%2F2.gif?alt=media&token=05e19da2-78d2-4d80-b37f-78abbc215a0c",
@@ -41,10 +47,11 @@ public class Camera extends AppCompatActivity {
 
     private String[] redmi_video_strings = {"Click camera icon","Click video text","Red button to start, Red square button to stop","Left bottom button to preview","Press back button to exit"};
 
-    private String[] google_video =  {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FVideo%2FVID-20230308-WA0038.gif?alt=media&token=0922705f-6111-43f3-99d9-d2c7efb772c7",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FVideo%2FVID-20230308-WA0039.gif?alt=media&token=6caeb115-71be-45fa-adc2-3dd9b08cbf39"};
+    private String[] google_video =  {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FPhoto%2F4.gif?alt=media&token=b12d7dba-5f14-4769-95e7-63483e7d24b0",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FCamera%2FVideo%2F5.gif?alt=media&token=1f42410d-410a-457d-a06e-0ea309e40730"};
 
-    private String[] google_video_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] google_video_strings = {"tap on the video icon at the bottom",
+            "click on the white circle to start recording and red to stop"};
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;

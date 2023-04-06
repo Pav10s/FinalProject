@@ -25,27 +25,32 @@ public class PlayStore extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FinstallApp%2Fps4.gif?alt=media&token=426d5f52-348d-48ad-a19c-10938ebedb56",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FinstallApp%2Fps5.gif?alt=media&token=fbe10ac3-8b1c-4b80-9f3e-6aa2b3c88355"};
 
-    private String[] redmi_install_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] redmi_install_strings = {"Click on Playstore icon","Click on top textfield then type the name of application and hit enter","Click on the application to install and hit Green install button","Wait until virus scan complete","Press back button and swipe to last page to see the application"};
 
     private String[] google_install = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPlayStore%2FInstll%2FVID-20230308-WA0021.gif?alt=media&token=b917d94e-2399-4e7c-a793-95e42f4c58d5",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPlayStore%2FInstll%2FVID-20230308-WA0022.gif?alt=media&token=9fe70aae-9a17-49d5-996e-41025ea4a1cd",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPlayStore%2FInstll%2FVID-20230308-WA0023.gif?alt=media&token=6afac2f7-2455-40a8-a487-ecd811d336f2",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPlayStore%2FInstll%2FVID-20230308-WA0024.gif?alt=media&token=297494b8-c00f-4cad-bb51-17a25cfe852e"};
 
-    private String[] google_install_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] google_install_strings = {"open play store",
+            "search for app you want to install in search bar",
+            "tap install button to install app in your phone",
+            "tap cancel if u want to cancel installing , exit app"};
 
     private String[] redmi_uninstall = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall1.gif?alt=media&token=36112e31-a918-4698-8327-4ca1fcd16521",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall2.gif?alt=media&token=3d25ddbf-182a-4f9e-bb76-12f4e404ccad",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall3.gif?alt=media&token=6b55de87-2d6c-49ef-9fb5-bd7cab466de5",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall4.gif?alt=media&token=a57f53b6-1d5b-4069-85be-85165bf6ceff"};
 
-    private String[] redmi_uninstall_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] redmi_uninstall_strings = {"Click on Playstore icon","Click on top textfield then type the name of application and hit enter","To uninstall an app click white uninstall button and click uninstall","press back button"};
 
     private String[] google_uninstall = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FPlayStore%2FInstll%2FVID-20230308-WA0021.gif?alt=media&token=b917d94e-2399-4e7c-a793-95e42f4c58d5",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall2.gif?alt=media&token=3d25ddbf-182a-4f9e-bb76-12f4e404ccad",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPlaystore%2FuninstallApp%2Funinstall3.gif?alt=media&token=6b55de87-2d6c-49ef-9fb5-bd7cab466de5"};
 
-    private String[] google_uninstall_strings = {"Blah", "Blah", "Blah", "Blah", "Blah", "Blah"};
+    private String[] google_uninstall_strings = {"open playstore",
+                    "search for app you want to uninstall in search bar",
+                    "tap app , tap uninstall and confirm it, app is uninstalled, exit app"};
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
