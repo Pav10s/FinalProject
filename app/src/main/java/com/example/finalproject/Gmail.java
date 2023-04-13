@@ -36,6 +36,7 @@ public class Gmail extends AppCompatActivity {
             "type message you want to send in compose email , tap send icon at top right corner , exit app"};
 
     private String[] redmi_attach_to_mail = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FattachFile%2F1.gif?alt=media&token=8e7ac937-2e00-41a1-a055-1204be71e422",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FcomposeMail%2FMail2.gif?alt=media&token=62ee0eb7-c4fe-4cd9-9c07-3752b579eb17",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FattachFile%2F2.gif?alt=media&token=95c6e377-7c35-4406-970f-47fc37d474f9",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FattachFile%2F3.gif?alt=media&token=6f30de6d-c7e2-43ee-84c5-b80b9ee1a6ef",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FattachFile%2F4.gif?alt=media&token=b23ba40e-75e9-4ea8-a646-2c253281eb27",

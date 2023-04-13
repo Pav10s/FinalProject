@@ -60,7 +60,7 @@ public class Phone extends AppCompatActivity {
                                     "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2Fcall%20via%20contact%2F3.gif?alt=media&token=43e9b2fa-1cdd-4981-bb12-af416988280d",
                                     "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FPhone%2Fcall%20via%20contact%2F4.gif?alt=media&token=1ad7c459-2fcd-43e2-83c6-06d434bb8302"};
 
-    private String[] redmi_call_contact_strings = {"Click phone icon","Searchbar to search contact, Click contact","Green button to call:Red button to end call","Press back button"};
+    private String[] redmi_call_contact_strings = {"Click phone icon","Searchbar to search contact, Click contact","Green button to call, Red button to end call","Press back button"};
 
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
