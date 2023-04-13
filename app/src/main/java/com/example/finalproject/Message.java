@@ -30,7 +30,7 @@ public class Message extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FMessage%2FSend%20Message%2Fd.gif?alt=media&token=5a3c5f18-9ec1-4b1a-9005-4a80cf579277",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FMessage%2FSend%20Message%2Fe.gif?alt=media&token=dd21ecdf-9c0a-462b-a316-84bffd38ff78"};
 
-    private String[] redmi_send_strings = {"Open Message Application","Bottom right plus button to compose a message","Contact icon to search a contact","Select contact","Press OK at the bottom","CLick on the bottom text field and write your message","Green Up arrow to send message","Press back botton"};
+    private String[] redmi_send_strings = {"Open Message Application","Bottom right plus button to compose a message","Contact icon to search a contact","Select contact","Press OK at the bottom","CLick on the bottom text field and write your message","Green Up arrow to send message","Press back button"};
 
     private String[] redmi_send = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMessage%2FSend%20Message%2Fmsg1.gif?alt=media&token=98480629-b27c-4982-b6bb-e6231bc8d04b",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMessage%2FSend%20Message%2Fmsg2.gif?alt=media&token=4af3f169-51bf-4866-8595-bd11f22f7daa",

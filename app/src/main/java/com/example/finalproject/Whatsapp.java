@@ -56,15 +56,15 @@ public class Whatsapp extends AppCompatActivity {
 
     private String[] redmi_whatsapp_call_strings = {"Click whatsapp icon","Search contact using searchbar on top and tap on it","Click phone icon at the top","Red button to end call","Press back button to exit"};
 
-    private String[] google_video_call = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F1.gif?alt=media&token=d03173ff-99d5-4d7c-b124-dd65f35d43ad",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F2.gif?alt=media&token=7ef2b888-6949-45cb-ae0e-ddf3815a4a7e",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F3.gif?alt=media&token=a4eb8067-a752-45a9-bb48-8c9c4aa1a816",
-            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F4.gif?alt=media&token=4ee0d183-872f-42db-a60c-9eb3d7ed2a49"};
+    private String[] google_video_call = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FWhatsapp%2FWhatsappVdo%2F1.gif?alt=media&token=beef85e3-1176-4efe-9399-d36389b22364",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FWhatsapp%2FWhatsappVdo%2F2.gif?alt=media&token=b91c67c6-2b15-4dd0-89f1-d02ce9f1afbe",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FWhatsapp%2FWhatsappVdo%2F3.gif?alt=media&token=177c2d9d-f154-461c-a393-5d6ddabd6045",
+            "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FWhatsapp%2FWhatsappVdo%2F4.gif?alt=media&token=aee2e84e-5efa-4aad-9449-a702b7a2be51"};
 
-    private String[] google_video_call_strings = {"open whatsapp",
-            "search the contact you want to video call",
-            "tap camera icon on top right corner to start video call,tap red phone icon on bottom right corner to end video call",
-            "exit the app"};
+    private String[] google_video_call_strings = {"Open contact",
+            "Tap camera icon at top right corner to start video call",
+            "Tap red phone icon at bottom right corner to end video call",
+            "Exit the app"};
 
     private String[] redmi_video_call = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F1.gif?alt=media&token=d03173ff-99d5-4d7c-b124-dd65f35d43ad",
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FWhatsapp%2FwhatsappVcall%2F2.gif?alt=media&token=7ef2b888-6949-45cb-ae0e-ddf3815a4a7e",

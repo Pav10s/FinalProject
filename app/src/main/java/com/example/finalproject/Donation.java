@@ -103,7 +103,7 @@ public class Donation extends AppCompatActivity implements PaymentResultListener
     @Override
     public void onPaymentSuccess(String s) {
         // this method is called on payment success.
-        Toast.makeText(this, "Payment is successful : " + s, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Payment is successful", Toast.LENGTH_SHORT).show();
     }
 
     @Override

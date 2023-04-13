@@ -66,16 +66,16 @@ public class FeedbackActivity extends AppCompatActivity {
         } else {
             Map<String, Object> suggestionData = new HashMap<>();
             suggestionData.put("fullName", fullName);
-            suggestionData.put("suggestion", suggestion);
+            suggestionData.put("feedback", suggestion);
 
-            fStore.collection("suggestions")
+            fStore.collection("feedback")
                     .add(suggestionData)
                     .addOnSuccessListener(documentReference -> {
-                        Toast.makeText(FeedbackActivity.this, "Thank you for your suggestion", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FeedbackActivity.this, "Thank you for your feedback", Toast.LENGTH_SHORT).show();
                         finish();
                     })
                     .addOnFailureListener(e -> {
-                        Toast.makeText(FeedbackActivity.this, "Failed to submit suggestion", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FeedbackActivity.this, "Failed to submit feedback", Toast.LENGTH_SHORT).show();
                     });
         }
     }

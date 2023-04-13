@@ -32,7 +32,7 @@ public class Gmail extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Google%2FMail%2FSendMail%2FVID-20230308-WA0027.gif?alt=media&token=3a4d8bfb-fc29-4242-828c-69a78ddb459a"};
 
     private String[] google_send_mail_strings = {"open gmail app",
-            "tap compompose button , type email address in to address",
+            "tap compose button , type email address in to address",
             "type message you want to send in compose email , tap send icon at top right corner , exit app"};
 
     private String[] redmi_attach_to_mail = {"https://firebasestorage.googleapis.com/v0/b/final-project-b573c.appspot.com/o/Redmi%2FMail%2FattachFile%2F1.gif?alt=media&token=8e7ac937-2e00-41a1-a055-1204be71e422",

@@ -78,7 +78,6 @@ public class Login extends AppCompatActivity {
 
     public void onBackPressed(){
 
-        Toast.makeText(getApplicationContext(), " Tata :) ", Toast.LENGTH_SHORT).show();
         finishAffinity();
         System.exit(0);
 
