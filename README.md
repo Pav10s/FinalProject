@@ -1,6 +1,5 @@
 # Grand Phone 
-## It is a smartphone tutorial app designed for users who are new to smartphones and 
-## need assistance in navigating their devices with ease.
+## It is a smartphone tutorial app designed for users who are new to smartphones and need assistance in navigating their devices with ease.
 With its user-friendly interface and 
 step-by-step tutorials, this app aims to bridge the digital divide and empower older adults, or 
 anyone who may be unfamiliar with smartphones, to confidently use and enjoy the benefits of 
